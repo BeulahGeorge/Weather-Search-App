@@ -44,7 +44,7 @@ function searchTemperature(response) {
   let wvisibility = document.querySelector("#visibility");
   let wpressure = document.querySelector("#pressure");
   let pressure = response.data.main.pressure;
-
+celciusTemperature = response.data.main.temp;
   wfsTemp.innerHTML = `${wfstemperature}`;
   wfCity.innerHTML = `${wfsCity}`;
   country.innerHTML = `${wfCountry}`;
@@ -74,6 +74,7 @@ function searchcity(event) {
 }
 let citySearch = document.querySelector("#citySearch");
 citySearch.addEventListener("click", searchcity);
+
 function displayfarenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#displayTemp");
