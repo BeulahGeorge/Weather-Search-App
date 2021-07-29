@@ -69,11 +69,13 @@ h3 {
 #displayTemp {
   padding: 0px;
   margin: 2px;
+  font-size: 28px;
 }
 .units {
   position: relative;
   font-size: 14px;
   top: -12px;
+  font-weight: 900;
 }
 #displayDetails {
   text-align: left;
