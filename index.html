@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Search</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    
+<link href="src/style.css" rel="stylesheet" type="text/css" />
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pridi&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app-wrapper">
+   <div class="container" id="header">
+       <div class="row">
+           <div class="col-6">
+       <h1>Weather Forecast</h1>
+       </div>
+       <div class="col-4">
+<form id="search-form">
+
+    <input
+            type="text"
+            class="form-control"
+            id="city"
+            placeholder="Enter a City"
+ autocomplete="off"
+        autofocus="on"
+          />
+          </div>
+
+<div class="col-2">
+    <input type="button" value ="Search" id="citySearch"/>
+
+        </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row">
+       <div class="col-12" id="displayCity">
+           
+           <h2><span id="cityname">Cardiff</span>, <span id="country"> Wales</span></h2>
+           <div class=dayTime> Last updated: <span id="date">Monday 09:25</span></div>
+           <div class="row">
+           <div class="col-6" id="image">
+           <div><img id="icon" alt="Cloudy" src="images/PartlyCloudyDay.svg" style="width:66px;height:66px" class="PartlyCloudyDay" alt="Sunny Day"> </div>
+           <h3><span id="displayTemp">20</span><small class="units">°C | °F</small></h3>
+           <div >Feels like <span id="feelsLike">19</span>°C</div>
+           </div>
+           <div class="col-6" id="displayDetails">
+         
+               <div id="weatherType">Mostly Cloudy</div>
+               
+               <div>humidity <span id="humidity">50%</span></div>
+               <div >Wind <span id="wind">2</span>mph</div>
+               <div >Visibility <span id="visibility">6.2</span>mi</div>
+                <div >Pressure <span id="pressure">1010 </span>mb</div>
+           </div>
+           </div>
+           </div>
+           </div>
+       </div>
+       <div class="row">
+       <div class="col-2">
+       <div class="card">
+           <h3>Mon 26</h3>
+            <img id="icon" src="images/PartlyCloudyDay.svg" style="width:90px;height: 90px" alt="PartlyCloudyDay" id="weatherPic">
+            <div class="container">
+             <p><b>Max 23°C</b></p> 
+            <p>Min 19°C</p> 
+            <p>Partialy Sunny</p>
+            </div>
+        </div>
+        </div>
+
+    
+<div class="col-2">
+    <div class="card">
+           <h3>Tue 27</h3>
+  <img id="icon" src="images/RainShowersDay.svg" style="width:90px;height: 90px" alt="Rain Shower" id="weatherPic">
+  <div class="container">
+    <p><b>Max 21°C</b></p> 
+    <p>Min 15°C</p> 
+    <p>Rain Showers</p>
+  </div>
+</div>
+</div>
+<div class="col-2">
+    <div class="card">
+           <h3>Wed 28</h3>
+  <img id="icon" src="images/RainShowersDay.svg" style="width:90px;height: 90px" alt="RainShowersDay" id="weatherPic">
+  <div class="container">
+    <p><b>Max 18°C</b></p> 
+    <p>Min 14°C</p> 
+    <p>Rain Showers</p>
+  </div>
+</div>
+</div>
+
+              <div class="col-2">
+    <div class="card">
+           <h3>Thu 29</h3>
+  <img id="icon" src="images/LightRain.svg" style="width:90px;height: 90px" alt="LightRain" id="weatherPic">
+  <div class="container">
+    <p><b>Max 18°C</b></p> 
+    <p>Min 14°C</p> 
+    <p>Light Rain</p>
+  </div>
+</div>
+   </div>          
+<div class="col-2">
+    <div class="card">
+           <h3>Fri 30</h3>
+  <img id="icon" src="images/RainShowersDay.svg" style="width:90px;height: 90px" alt="RainShowersDay" id="weatherPic">
+  <div class="container">
+    <p><b>Max 20°C</b></p> 
+    <p>Min 14°C</p> 
+    <p>Rain Showers</p>
+  </div>
+</div>
+    </div>         
+<div class="col-2">
+    <div class="card">
+           <h3>Sat 31</h3>
+  <img id="icon" src="images/RainShowersDay.svg" style="width:90px;height: 90px" alt="RainShowersDay" id="weatherPic">
+  <div class="container">
+    <p><b>Max 21°C</b></p> 
+    <p>Min 14°C</p> 
+    <p>Rain Showers</p>
+                </div>
+            </div>
+        </div>
+        
+        </div>  
+        <small id="footer">
+          <a
+            href="https://github.com/wecodeschool/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Beulah George
+        </small>     
+        </div>
+        
+        </div>
+        <script src="src\index.js"></script>
+       </div>       
+   </div>  
+   </div>
+   </div>
+</body>
+</html>
